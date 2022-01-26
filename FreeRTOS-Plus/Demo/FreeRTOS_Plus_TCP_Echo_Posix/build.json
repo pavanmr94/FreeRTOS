@@ -5,7 +5,7 @@
             "build": {
                 "requires": ["iot-thing"],
                 "cmd": [
-                    "echo 'command 1'",
+                    "make -j -C FreeRTOS-Plus/Demo/FreeRTOS_Plus_TCP_Echo_Posix",
                     "echo \"{'verdict': 'Pass'}\" > result.json"
                 ],
                 "check_output": ["result.json"]
