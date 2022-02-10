@@ -1,0 +1,15 @@
+{
+    "requires": [{ "name": "linux" }, { "name": "arm_gcc", "version": "10" }],
+    "jobs": [
+        {
+            "build": {
+                "requires": ["iot-thing"],
+                "cmd": [
+                    "make -j -C FreeRTOS-Plus/Demo/FreeRTOS_Plus_TCP_Echo_Posix",
+                    "echo \"{'verdict': 'Pass'}\" > result.json"
+                ],
+                "check_output": ["result.json"]
+            }
+        }
+    ]
+}
